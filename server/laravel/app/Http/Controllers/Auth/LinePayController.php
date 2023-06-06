@@ -50,7 +50,7 @@ class LinePayController extends Controller
             )),
             "redirectUrls" => array(
                // "confirmUrl" => "https://myPage",
-                "confirmUrl" => "http://localhost/dashboard",
+                "confirmUrl" => config('app.app_url')."/settlement",
 
                 "cancelUrl" => "https://myPage"
             )

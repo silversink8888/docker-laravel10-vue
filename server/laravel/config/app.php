@@ -27,6 +27,7 @@ return [
 
     'public_key' => env('LINE_PAY_CHANNEL_ID', ''),
     'secret_key' => env('LINE_PAY_CHANNEL_SECRET', ''),
+    'app_url' => env('APP_URL', ''),
         
     /*
     |--------------------------------------------------------------------------
