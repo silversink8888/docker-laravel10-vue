@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\SettlementController;
+use App\Http\Controllers\Auth\LinePayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,5 +42,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/settlement', [SettlementController::class, 'update'])->name('settlement.update');
     Route::delete('/settlement', [SettlementController::class, 'destroy'])->name('settlement.destroy');
 });
+
+//Route::get('/payment/linepay/geturl', 'LinePayController@getLinepayPaymentURL');
+Route::get('/payment/linepay/geturl/{id}',         [LinePayController::class, 'index']);
+
+Route::get('/payment/linepay/paidSuccess', 'LinePayController@successLinepayPayment');
 
 require __DIR__.'/auth.php';
